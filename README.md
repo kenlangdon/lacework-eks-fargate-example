@@ -12,6 +12,9 @@ Create an AWS EKS Fargate cluster (this will take ~15 minutes)
 
 `eksctl create cluster --name fargate-fun --region us-east-2 --fargate`
 
+The `--fargate` option option above automatically creates a fargateprofile `fp-default` in the default namespace so the below namespace and profile creation are not needed for this.
+
+### Start of don't do these
 Create a namespace to use for all things Fargate
 
 `kubectl create ns fargate-ns`
@@ -19,6 +22,7 @@ Create a namespace to use for all things Fargate
 Create a Fargate Profile in your cluster (https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html)
 
 `eksctl create fargateprofile --cluster fargate-fun --name fargate-fp --namespace fargate-ns`
+### End of don't do these
 
 Add the Config Map to the cluster (use the lw-config-map.example as your guide)
 

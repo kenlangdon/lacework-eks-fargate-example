@@ -29,10 +29,10 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: lw-service-account
-    namespace: my-fargate-ns
+    namespace: default
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: lw-service-account
-  namespace: my-fargate-ns
+  namespace: default

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  namespace: my-fargate-ns
+  namespace: default
   name: my-app
 spec:
   serviceAccountName: lw-service-account

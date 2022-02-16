@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: tolam-ns
+  namespace: default
   name: lacework-config
 data:
   config.json: |
