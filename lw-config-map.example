@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: tolam-ns
+  name: lacework-config
+data:
+  config.json: |
+    {"tokens":{"AccessToken":"agent-token-here"}, "tags":{"Env":"k8s", "KubernetesCluster": "fargate-fun"}, "serverurl":""}

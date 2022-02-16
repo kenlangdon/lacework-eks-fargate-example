@@ -1,0 +1,38 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: lw-data-collector
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - nodes
+      - pods
+      - nodes/metrics
+      - nodes/spec
+      - nodes/stats
+      - nodes/proxy
+      - nodes/pods
+      - nodes/healthz
+    verbs:
+      - get
+      - list
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: lw-cluster-role-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: lw-data-collector
+subjects:
+  - kind: ServiceAccount
+    name: lw-service-account
+    namespace: my-fargate-ns
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: lw-service-account
+  namespace: my-fargate-ns
