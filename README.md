@@ -48,12 +48,11 @@ Run `kubectl apply -f eks-console-full-access.yaml`
 Run `kubectl edit -n kube-system configmap/aws-auth`
 
 Add under mapRoles adjusting for your role/user/group:
-`
+
     - rolearn: arn:aws:iam::950194951070:role/lacework-customerdemo-admin-role
       username: lacework-customerdemo-admin-role
       groups:
       - system:masters
-`
 
 example of resulting configmap/aws-auth:
 --------------------
@@ -76,6 +75,6 @@ metadata:
   name: aws-auth
   namespace: kube-system
   resourceVersion: "271179"
-  uid: 88a63260-861b-4ee1-b17d-451be627a749
+  uid: redacted
 ----------------------
 
