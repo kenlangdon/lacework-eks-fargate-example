@@ -53,28 +53,3 @@ Add under mapRoles adjusting for your role/user/group:
       username: lacework-customerdemo-admin-role
       groups:
       - system:masters
-
-example of resulting configmap/aws-auth:
---------------------
-apiVersion: v1
-data:
-  mapRoles: |
-    - groups:
-      - system:bootstrappers
-      - system:nodes
-      - system:node-proxier
-      rolearn: arn:aws:iam::950194951070:role/eksctl-fargate-fun-c-FargatePodExecutionRole-1JOJZJHGA5LO
-      username: system:node:{{SessionName}}
-    - rolearn: arn:aws:iam::950194951070:role/lacework-customerdemo-admin-role
-      username: lacework-customerdemo-admin-role
-      groups:
-      - system:masters
-kind: ConfigMap
-metadata:
-  creationTimestamp: "2022-02-10T21:04:00Z"
-  name: aws-auth
-  namespace: kube-system
-  resourceVersion: "271179"
-  uid: redacted
-----------------------
-
