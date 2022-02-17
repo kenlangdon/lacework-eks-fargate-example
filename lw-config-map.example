@@ -1,3 +1,7 @@
+# This example if renamed to lw-config-map.yml or lw-config-map.yaml, 
+# it can hold your token and be ignored if you push a change to your fork
+# or contribute to the example thus preventing your token from being in a repo
+# which would be bad cause reasons
 apiVersion: v1
 kind: ConfigMap
 metadata:
